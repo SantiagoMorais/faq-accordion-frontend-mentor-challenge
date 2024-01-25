@@ -1,0 +1,22 @@
+@media (max-width: 470px) {
+    body {
+        overflow-y: scroll;
+    }
+
+    .container .content {
+        padding: 3rem;
+        margin: 2rem 2rem 8rem;
+    }
+
+    .content .header .title {
+        font-size: 4rem;
+    }
+
+    .content .content .faq {
+        margin: 2.5rem;
+    }
+
+    .container .faq.selected .answer {
+        overflow-y: scroll;
+    }
+}

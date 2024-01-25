@@ -1,0 +1,125 @@
+body {
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    height: 38vh;
+    width: 100%;
+    background: url(../images/background-pattern-desktop.svg) no-repeat;
+    background-size: cover;
+    display: block;
+    position: fixed;
+    top: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--container-background-color);
+    position: relative;
+}
+
+.container .content {
+    z-index: 1;
+    position: relative;
+    max-width: 60rem;
+    margin: 2rem;
+    background-color: var(--content-background-color);
+    padding: 4.2rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+}
+
+.container .content .header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.content .header .title {
+    font-size: 5.6rem;
+    font-weight: bold;
+    color: var(--question-color);
+}
+
+.container .content .faq {
+    margin: 3.8rem 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .content .faq:last-child {
+    margin: 0;
+}
+
+.content .faq .question {
+    color: var(--question-color);
+    display: flex;
+    margin-right: 4rem;
+    font-size: 1.8rem;
+    transition: .3s;
+}
+
+.content .faq .question::after {
+    content: "";
+    width: 3rem;
+    height: 3.1rem;
+    background-image: url(../images/icon-plus.svg);
+    display: inline-block;
+    position: absolute;
+    right: 4rem;
+    transition: .3s;
+}
+
+.content .faq:hover > .question::after {
+    opacity: .8;
+}
+
+.content .faq:hover > .question {
+    color: var(--hover-color);
+}
+
+.content .faq .answer {
+    margin-top: 2.5rem;
+    line-height: 150%;
+    color: var(--answer-color);
+    height: 0;
+    overflow: hidden;
+    font-weight: 400;
+    transition: .5s;
+}
+
+.attribution {
+    text-align: center;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100%;
+    background-color: var(--container-background-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,.4);
+}
+
+.attribution a {
+    color: var(--hover-color);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.attribution a:hover {
+    opacity: .8;
+}
+
+/* selected question */
+.container .faq.selected .answer {
+    height: 12rem;
+}
+
+.content .faq.selected .question::after {
+    background-image: url(../images/icon-minus.svg);
+}
+
